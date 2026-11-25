@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>自然選擇號｜《三體II：黑暗森林》恆星級戰艦 3D 模型（同人作品）</title>
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="data:,">
+<style>
+  html,body{margin:0;height:100%;background:#000;overflow:hidden;font-family:-apple-system,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;color:#e8eef6;touch-action:none;-webkit-user-select:none;user-select:none}
+  #app{position:fixed;inset:0}
+  canvas{display:block}
+  .hud{position:fixed;left:0;right:0;top:0;padding:calc(env(safe-area-inset-top) + 12px) 16px 0;pointer-events:none;text-shadow:0 1px 6px #000}
+  .hud h1{margin:0;font-size:22px;letter-spacing:2px;font-weight:700}
+  .hud h1 small{font-size:12px;font-weight:400;opacity:.75;letter-spacing:1px;margin-left:6px}
+  .hud p{margin:4px 0 0;font-size:12px;opacity:.72;line-height:1.5}
+  #status{position:fixed;right:10px;top:calc(env(safe-area-inset-top) + 12px);font-size:11px;opacity:.6;pointer-events:none}
+  .btns{position:fixed;left:0;right:0;bottom:calc(env(safe-area-inset-bottom) + 14px);display:flex;gap:8px;justify-content:center;pointer-events:none}
+  .btns button{pointer-events:auto;background:rgba(18,24,34,.72);border:1px solid rgba(140,180,230,.35);color:#dfe8f5;border-radius:18px;padding:9px 14px;font-size:14px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+  .btns button.on{background:rgba(40,110,170,.8);border-color:#7cc4ff}
+  #info{position:fixed;left:10px;right:10px;bottom:calc(env(safe-area-inset-bottom) + 64px);max-width:520px;margin:0 auto;background:rgba(10,16,26,.86);border:1px solid rgba(120,190,255,.35);border-radius:14px;padding:12px 14px 14px;transform:translateY(20px);opacity:0;pointer-events:none;transition:.25s;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);max-height:42vh;overflow:auto}
+  #info.show{transform:none;opacity:1;pointer-events:auto}
+  #info .row{display:flex;align-items:center;gap:8px}
+  #pname{font-size:17px;font-weight:700;flex:1}
+  #ptag{font-size:11px;color:#071018;border-radius:9px;padding:2px 8px;font-weight:700;white-space:nowrap}
+  #pclose{background:none;border:0;color:#9fb3c8;font-size:22px;line-height:1;padding:0 2px}
+  #ptext{margin:8px 0 0;font-size:14px;line-height:1.65;opacity:.92}
+  #loading{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;font-size:14px;opacity:.7}
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<div id="app"></div>
+<div id="loading">正在以程式生成戰艦與貼圖…</div>
+<div class="hud">
+  <h1>自然選擇號<small>恆星級戰艦</small></h1>
+  <p>《三體II：黑暗森林》同人 3D 模型・全部由程式繪製<br>單指旋轉・雙指縮放／平移・點一下部位看介紹</p>
+</div>
+<div id="status"></div>
+<div id="info"><div class="row"><span id="pname"></span><span id="ptag"></span><button id="pclose" aria-label="關閉">×</button></div><p id="ptext"></p></div>
+<div class="btns"><button id="bBoost">前進四</button><button id="bCut">剖面</button><button id="bHome">回正</button></div>
+<script type="module" src="./main.js"></script>
+</body>
+</html>
